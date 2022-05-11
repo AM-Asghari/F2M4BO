@@ -19,6 +19,5 @@ Het doel tijdens deze beroepsopdracht is een shippable space-themed game hebben 
 ## Over de game
 
 ...
-test
 
 ---
