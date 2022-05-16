@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class starPickup : MonoBehaviour
 {
-    /*public Canvas canvas;
+    public Canvas canvas;
 
     public UIcontroller ui;
 
@@ -33,6 +33,6 @@ public class starPickup : MonoBehaviour
             Debug.Break();
             ui.AddPoints(1);
         }
-    }*/
+    }
 
 }
