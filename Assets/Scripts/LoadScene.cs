@@ -16,6 +16,7 @@ public class LoadScene : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Starting game/scene...");
+        Debug.Break();
         ShowLoadingScreen();
         scenesToLoad.Add(SceneManager.LoadSceneAsync(sceneName));
         StartCoroutine(LoadingScreen());
