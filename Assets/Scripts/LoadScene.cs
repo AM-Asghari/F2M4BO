@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class LoadScene : MonoBehaviour
 {
     public GameObject menu;
     public GameObject loadingInterface;
@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        
+        Debug.Log("Starting game/scene...");
         ShowLoadingScreen();
         scenesToLoad.Add(SceneManager.LoadSceneAsync(sceneName));
         StartCoroutine(LoadingScreen());
