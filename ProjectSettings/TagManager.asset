@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Planet
   - onPlanet
+  - Star
   layers:
   - Default
   - TransparentFX
