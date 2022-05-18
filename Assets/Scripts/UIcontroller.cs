@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIcontroller : MonoBehaviour
 {
     public Text scoreTextObject;
     public GameObject mapObject;
+    public bool mapEnabled = true;
 
     // Start is called before the first frame update
     void Start()
     {
         Text score = scoreTextObject.GetComponent<Text>();
+        Scene scene = SceneManager.GetActiveScene();
+
+        if(scene.name != "Level00")
+        {
+            Debug.Log(scene.name);
+            mapEnabled = true;
+        }
     }
 
     // Update is called once per frame
@@ -34,9 +43,14 @@ public class UIcontroller : MonoBehaviour
         {
             mapObject.SetActive(false);
         }
-        else
+        else if(mapObject.activeSelf == false && mapEnabled == true)
         {
             mapObject.SetActive(true);
         }
+    }
+
+    public void UnlockMap()
+    {
+        mapEnabled = true;
     }
 }
