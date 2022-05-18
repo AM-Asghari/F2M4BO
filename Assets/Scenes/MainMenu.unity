@@ -979,7 +979,7 @@ MonoBehaviour:
   menu: {fileID: 1278897921}
   loadingInterface: {fileID: 312769183}
   loadingProgressBar: {fileID: 338615966}
-  sceneName: Level01
+  sceneName: Level00
 --- !u!1 &1457875460
 GameObject:
   m_ObjectHideFlags: 0
