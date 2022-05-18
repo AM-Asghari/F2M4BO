@@ -35,6 +35,7 @@ public class playerPickup : MonoBehaviour
         {
             Debug.Log("Picking up map...");
 
+            Destroy(collision.gameObject);
             ui.UnlockMap();
         }
     }

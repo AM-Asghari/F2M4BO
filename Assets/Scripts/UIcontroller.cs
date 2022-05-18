@@ -8,6 +8,7 @@ public class UIcontroller : MonoBehaviour
 {
     public Text scoreTextObject;
     public GameObject mapObject;
+    public GameObject LevelController;
     public bool mapEnabled = true;
 
     // Start is called before the first frame update
@@ -52,5 +53,8 @@ public class UIcontroller : MonoBehaviour
     public void UnlockMap()
     {
         mapEnabled = true;
+        LevelController.SendMessage("RunMapTutorial", null, SendMessageOptions.DontRequireReceiver);
     }
+
+    
 }
