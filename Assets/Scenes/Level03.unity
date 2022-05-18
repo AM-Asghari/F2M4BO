@@ -279,6 +279,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1239551468127018690, guid: bc01fefd5c4987049904c2be19ac834f, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1499864691}
     - target: {fileID: 1239551468127018691, guid: bc01fefd5c4987049904c2be19ac834f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -389,6 +393,11 @@ PrefabInstance:
 --- !u!224 &1499864690 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4607401741314541493, guid: e576fb736df5e4747b024cf9c82b90d7, type: 3}
+  m_PrefabInstance: {fileID: 1499864689}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1499864691 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4607401741314541489, guid: e576fb736df5e4747b024cf9c82b90d7, type: 3}
   m_PrefabInstance: {fileID: 1499864689}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1638828786
