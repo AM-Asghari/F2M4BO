@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelStartupSequence : MonoBehaviour
 {
     public GameObject interfaces;
+    public GameObject map;
 
     private SpriteRenderer sr;
 
@@ -12,6 +13,7 @@ public class LevelStartupSequence : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        interfaces.SetActive(false);
 
         StartCoroutine(ChangeTransparency());
 
@@ -33,5 +35,6 @@ public class LevelStartupSequence : MonoBehaviour
             yield return new WaitForSeconds(0.025f);
         }
         gameObject.SetActive(false);
+        interfaces.SetActive(true);
     }
 }
