@@ -6,20 +6,17 @@ using UnityEngine.UI;
 public class LevelStartupSequence : MonoBehaviour
 {
     public GameObject score;
-    public GameObject map;
 
     public GameObject walkingtext;
     public GameObject jumpingtext;
     public GameObject maptext;
 
     private SpriteRenderer sr;
-    private Rigidbody2D mrb;
 
     // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>(); //Get components for sprite renderer so opacity can be changed
-        mrb = map.GetComponent<Rigidbody2D>(); //Get component for rb2d for map so gravity can be turned on and off
         
         StartCoroutine(Level()); //Start level mechanics
 
@@ -57,8 +54,6 @@ public class LevelStartupSequence : MonoBehaviour
         {
             yield return null;
         }
-
-        mrb.gravityScale = 1; //Let map fall down
 
         yield return new WaitForSeconds(2);
 
