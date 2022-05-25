@@ -34,7 +34,6 @@ public class LevelStartupSequence : MonoBehaviour
         //Black screen transition
         for (float i = 1f; i > 0.01f; i = i - 0.01f)
         {
-            Debug.Log(i);
             sr.color = new Color(0, 0, 0, i);
             yield return new WaitForSeconds(0.025f);
         }
@@ -81,11 +80,7 @@ public class LevelStartupSequence : MonoBehaviour
 
     }
 
-    IEnumerator WaitForKeyDown(KeyCode keyCode)
-    {
-        while (!Input.GetKeyDown(keyCode))
-            yield return null;
-    }
+    
 
     public void RunMapTutorial()
     {
