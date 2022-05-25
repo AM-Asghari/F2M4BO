@@ -6,20 +6,22 @@ using UnityEngine.UI;
 public class LevelStartupSequence : MonoBehaviour
 {
     public GameObject score;
-    public GameObject map;
-
-    public GameObject walkingtext;
-    public GameObject jumpingtext;
-    public GameObject maptext;
+    public GameObject faseNPC;
+    public GameObject tutorialGroup;
+    public GameObject textObject;
+    private TMPro.TextMeshProUGUI tutorialText;
+    public string[] texts;
+    public float textDelay = 2.5f;
 
     private SpriteRenderer sr;
-    private Rigidbody2D mrb;
 
     // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>(); //Get components for sprite renderer so opacity can be changed
-        mrb = map.GetComponent<Rigidbody2D>(); //Get component for rb2d for map so gravity can be turned on and off
+        tutorialText = textObject.GetComponent<TMPro.TextMeshProUGUI>();
+
+        tutorialGroup.SetActive(false);
         
         StartCoroutine(Level()); //Start level mechanics
 
@@ -37,15 +39,20 @@ public class LevelStartupSequence : MonoBehaviour
         //Black screen transition
         for (float i = 1f; i > 0.01f; i = i - 0.01f)
         {
-            Debug.Log(i);
             sr.color = new Color(0, 0, 0, i);
             yield return new WaitForSeconds(0.025f);
         }
         //gameObject.SetActive(false); //Turn off black screen
 
-        yield return new WaitForSeconds(2);
+        tutorialGroup.SetActive(true);
 
-        walkingtext.SetActive(true);
+        //Player welcome text
+        tutorialText.text = texts[0];
+
+        yield return new WaitForSeconds(textDelay);
+
+        //Player walking info
+        tutorialText.text = texts[1];
 
         //Wait for A press
         while (!Input.GetKeyUp(KeyCode.A))
@@ -58,11 +65,10 @@ public class LevelStartupSequence : MonoBehaviour
             yield return null;
         }
 
-        mrb.gravityScale = 1; //Let map fall down
+        yield return new WaitForSeconds(textDelay / 3);
 
-        yield return new WaitForSeconds(2);
-
-        jumpingtext.SetActive(true);
+        //Player jumping info
+        tutorialText.text = texts[2];
 
         //Wait for Space
         while (!Input.GetKeyUp(KeyCode.Space))
@@ -70,30 +76,80 @@ public class LevelStartupSequence : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(textDelay);
 
-        walkingtext.SetActive(false);
-        jumpingtext.SetActive(false);
+        //Playerjump to planet info
+        tutorialText.text = texts[3];
 
-        while (!Input.GetKeyUp(KeyCode.M))
+        yield return new WaitForSeconds(textDelay + 5);
+
+        //Player talk to NPC info
+        tutorialText.text = texts[4];
+
+        //Wait for E
+        while (!Input.GetKeyUp(KeyCode.E))
         {
             yield return null;
         }
 
-        maptext.SetActive(false);
+        //Wait for A
+        while (!Input.GetKeyUp(KeyCode.A))
+        {
+            yield return null;
+        }
+
+        //Player boost to planet info
+        tutorialText.text = texts[5];
+
+        //Wait for Right Mouse
+        while (!Input.GetMouseButtonDown(1))
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(textDelay);
+
+        //Player suck info
+        tutorialText.text = texts[6];
+
+        //Wait for Left Mouse
+        while (!Input.GetMouseButtonDown(0))
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(textDelay);
+
+        tutorialText.text = texts[7];
+        faseNPC.SendMessage("SetDialogueFase", 1);
+
+        //Wait for E
+        while (!Input.GetKeyUp(KeyCode.E))
+        {
+            yield return null;
+        }
+
+        //Wait for A
+        while (!Input.GetKeyUp(KeyCode.A))
+        {
+            yield return null;
+        }
+
+        tutorialText.text = texts[8];
+
+        //Wait for M
+        while (!Input.GetKeyDown(KeyCode.M))
+        {
+            yield return null;
+        }
+
+        tutorialGroup.SetActive(false);
 
         yield return null;
 
     }
 
-    IEnumerator WaitForKeyDown(KeyCode keyCode)
-    {
-        while (!Input.GetKeyDown(keyCode))
-            yield return null;
-    }
+    
 
-    public void RunMapTutorial()
-    {
-        maptext.gameObject.SetActive(true);
-    }
+    
 }
