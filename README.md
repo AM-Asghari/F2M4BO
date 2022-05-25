@@ -7,7 +7,7 @@ Het doel tijdens deze beroepsopdracht is een shippable space-themed game hebben 
 
 ## Over de game
 
-Je speelt als een astronaut postbezorger, die sterren verzamelt om ze af te leveren bij klanten, die ze gebruiken voor van alles en nog wat. Je lost puzzels op, springt van planeet naar planeet en vliegt heen en weer om zoveel mogelijk sterren op te zuigen met je speciaal gereedschap. 
+Je speelt als een astronaut postbezorger, die sterren verzamelt om ze af te leveren bij klanten. Met je speciale ruimtestofzuiger vlieg je van planeet naar planeet, los je puzzels op en zuig je sterren op om ze bij je klanten in nood te bezorgen.
 
 ---
 
