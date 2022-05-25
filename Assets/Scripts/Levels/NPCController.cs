@@ -6,7 +6,8 @@ public class NPCController : MonoBehaviour
 {
 
     public string npcName; //The name of the NPC
-    public string[] dialogues; //All the dialogue entries
+    public string[] dialogues0; //All the dialogue entries
+    public string[] dialogues1; //Second dialogue fase, e.g. after certain event has passed
     public float maxDistance = 3f; //The max distance required to talk to the npc
 
     public GameObject convoBox; //The whole dialogue box object
@@ -16,6 +17,7 @@ public class NPCController : MonoBehaviour
     public GameObject textObject; //The dialogue text object
     private TMPro.TextMeshProUGUI textMeshChat; //The text component in the textObject
 
+    public int dialogueFase = 0; //Gives the fase the dialogue is currently in, starts at 0
     public bool playerInRange;
 
 
@@ -68,20 +70,47 @@ public class NPCController : MonoBehaviour
     {
         convoBox.SetActive(true); //Show the dialogue box
         textMeshName.text = npcName; //Set the NPC name
-        textMeshChat.text = dialogues[0]; //Set the first dialogue entry
+
+        switch (dialogueFase) //Set the first dialogue entry, dependent on the dialogue fase
+        {
+            case 1:
+                textMeshChat.text = dialogues1[0];
+                break;
+            default:
+                textMeshChat.text = dialogues0[0];
+                break;
+        }
 
         yield return new WaitForSeconds(0.25f);
 
-        //For every piece of text that the NPC has in string[] dialogues,
-        foreach (string entry in dialogues)
+        if(dialogueFase == 1)
         {
-            textMeshChat.text = entry; //Show that text in the dialogue box
-            while (!Input.GetKeyDown(KeyCode.E)) //Wait for button input
+            //For every piece of text that the NPC has in string[] dialogues1,
+            foreach (string entry in dialogues1)
             {
-                yield return null;
+                textMeshChat.text = entry; //Show that text in the dialogue box
+                while (!Input.GetKeyDown(KeyCode.E)) //Wait for button input
+                {
+                    yield return null;
+                }
+                yield return new WaitForSeconds(0.05f);
             }
-            yield return new WaitForSeconds(0.05f);
-        } //When everything has been said,
+        }
+        else
+        {
+            //For every piece of text that the NPC has in string[] dialogues0,
+            foreach (string entry in dialogues0)
+            {
+                textMeshChat.text = entry; //Show that text in the dialogue box
+                while (!Input.GetKeyDown(KeyCode.E)) //Wait for button input
+                {
+                    yield return null;
+                }
+                yield return new WaitForSeconds(0.05f);
+            }
+        }
+
+        //When everything has been said;
 
         convoBox.SetActive(false); //Hide the dialogue box
 
@@ -91,7 +120,12 @@ public class NPCController : MonoBehaviour
     void StopConversation()
     {
         convoBox.SetActive(false); //Hide the dialogue box
-        StopCoroutine(StartConversation()); //Stop the dialogue
+        StopAllCoroutines(); //Stop the dialogue
+    }
+
+    public void SetDialogueFase(int fase)
+    {
+        dialogueFase = fase;
     }
 
 
