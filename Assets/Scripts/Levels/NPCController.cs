@@ -4,34 +4,36 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-    public GameObject player;
 
-    public GameObject convoBox;
-    public GameObject textObject;
+    public string npcName; //The name of the NPC
+    public string[] dialogues; //All the dialogue entries
+    public float maxDistance = 3f; //The max distance required to talk to the npc
 
-    public string[] dialogues;
-
-    private TMPro.TextMeshProUGUI textMesh;
-
-    public float minDistance = 2f;
+    public GameObject convoBox; //The whole dialogue box object
+    public GameObject player; //Player object
+    public GameObject nameObject; //Text containing NPC name
+    private TMPro.TextMeshProUGUI textMeshName; //The text component in the nameObject
+    public GameObject textObject; //The dialogue text object
+    private TMPro.TextMeshProUGUI textMeshChat; //The text component in the textObject
 
     public bool playerInRange;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
-        textMesh = textObject.GetComponent<TMPro.TextMeshProUGUI>();
+        player = GameObject.Find("Player"); //Sets the player object to the object named Player
+        textMeshChat = textObject.GetComponent<TMPro.TextMeshProUGUI>(); //Gets the text component in textObject
+        textMeshName = nameObject.GetComponent<TMPro.TextMeshProUGUI>(); //Gets the text component in nameObject
 
-        convoBox.SetActive(false);
-
-        Debug.Log(convoBox.activeInHierarchy);
+        convoBox.SetActive(false); //Confirm the convoBox is hidden
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerInRange = DistanceToPlayer();
+        playerInRange = DistanceToPlayer(); //Set if the player is in range for starting conversation
 
         //If the player does not have a dialogue box open and presses , start the conversation
         if(playerInRange && Input.GetKeyDown(KeyCode.E) && convoBox.activeInHierarchy == false)
@@ -49,9 +51,9 @@ public class NPCController : MonoBehaviour
     //Will check if the distance to the player is under a certain amount, if so return true
     internal bool DistanceToPlayer()
     {
-        float distance = Vector2.Distance(transform.position, player.transform.position);
+        float distance = Vector2.Distance(transform.position, player.transform.position); //Check the distance between npc and player
 
-        if (distance < minDistance)
+        if (distance < maxDistance) //If the distance is under the max distance;
         {
             return true;
         }
@@ -65,14 +67,15 @@ public class NPCController : MonoBehaviour
     IEnumerator StartConversation()
     {
         convoBox.SetActive(true); //Show the dialogue box
-        textMesh.text = dialogues[0]; //Set the first dialogue entry
+        textMeshName.text = npcName; //Set the NPC name
+        textMeshChat.text = dialogues[0]; //Set the first dialogue entry
 
         yield return new WaitForSeconds(0.25f);
 
         //For every piece of text that the NPC has in string[] dialogues,
         foreach (string entry in dialogues)
         {
-            textMesh.text = entry; //Show that text in the dialogue box
+            textMeshChat.text = entry; //Show that text in the dialogue box
             while (!Input.GetKeyDown(KeyCode.E)) //Wait for button input
             {
                 yield return null;
