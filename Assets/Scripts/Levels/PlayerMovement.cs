@@ -18,13 +18,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-
         if (Input.GetButtonDown("Jump"))
         {
             body.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
         }
-
     }
 
     private void FixedUpdate()
@@ -34,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D obj)
     {
+        horizontal = Input.GetAxisRaw("Horizontal");
+
         if (obj.CompareTag("Planet"))
         {
             body.drag = 1.5f;
