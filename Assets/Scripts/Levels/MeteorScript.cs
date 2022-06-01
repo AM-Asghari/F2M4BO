@@ -6,7 +6,7 @@ public class MeteorScript : MonoBehaviour
 {
 
     float xAxisSpeed = 0.01f;
-    float zAxisSpeed = -0.005f;
+    float zAxisSpeed = -0.007f;
     bool movingRight = true;
     //float sinInd = 0;
 
