@@ -7,6 +7,7 @@ public class LevelStartupSequence : MonoBehaviour
 {
     public GameObject score;
     public GameObject faseNPC;
+    public GameObject vacuumParent;
     public GameObject tutorialGroup;
     public GameObject textObject;
     private TMPro.TextMeshProUGUI tutorialText;
@@ -22,6 +23,7 @@ public class LevelStartupSequence : MonoBehaviour
         tutorialText = textObject.GetComponent<TMPro.TextMeshProUGUI>();
 
         tutorialGroup.SetActive(false);
+        vacuumParent.SetActive(false);
         
         StartCoroutine(Level()); //Start level mechanics
 
@@ -97,6 +99,9 @@ public class LevelStartupSequence : MonoBehaviour
         {
             yield return null;
         }
+
+        //Make vacuum active
+        vacuumParent.SetActive(true);
 
         //Player boost to planet info
         tutorialText.text = texts[5];
