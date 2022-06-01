@@ -333,6 +333,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &465638596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7191005909712829537, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+  m_PrefabInstance: {fileID: 1706799696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &496020680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -346,11 +351,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3697776030464627724, guid: 4ec9a30c320c28c4284334ec87aa5103, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 3697776030464627724, guid: 4ec9a30c320c28c4284334ec87aa5103, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -10.12
       objectReference: {fileID: 0}
     - target: {fileID: 3697776030464627724, guid: 4ec9a30c320c28c4284334ec87aa5103, type: 3}
       propertyPath: m_LocalPosition.z
@@ -701,6 +706,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1400134153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3697776030464627726, guid: 4ec9a30c320c28c4284334ec87aa5103, type: 3}
+  m_PrefabInstance: {fileID: 496020680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1400134156
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400134153}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &1501570354 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1239551468127018691, guid: bc01fefd5c4987049904c2be19ac834f, type: 3}
@@ -745,6 +776,71 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3999069528745109276, guid: 9a99fef54bf180349a66b74a388ce076, type: 3}
   m_PrefabInstance: {fileID: 3999069527140449325}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1706799696
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1501570354}
+    m_Modifications:
+    - target: {fileID: 7191005907982361129, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_Size.y
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005907982361129, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_Offset.y
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829536, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191005909712829537, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
+      propertyPath: m_Name
+      value: VacuumParent
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f6f87e85f2228448b133f515ad146e5, type: 3}
 --- !u!1 &1754551740
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +1065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 4607401742685144607}
   faseNPC: {fileID: 183478240}
+  vacuumParent: {fileID: 465638596}
   tutorialGroup: {fileID: 1639668529}
   textObject: {fileID: 1998347716}
   texts:
@@ -982,7 +1079,7 @@ MonoBehaviour:
   - Try sucking up that star using your new vacuum, by holding the left mouse button.
   - Now you can bring the star over to the old Geblo.. geblogg... geblorger!
   - Use M to open your new map and go deliver your first star!
-  textDelay: 4
+  textDelay: 0.1
 --- !u!212 &2138344059
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1252,6 +1349,10 @@ PrefabInstance:
     - target: {fileID: 1438095948390472291, guid: 992e0c09db909114c97b265ad7c6c4f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438095948390472292, guid: 992e0c09db909114c97b265ad7c6c4f3, type: 3}
+      propertyPath: npcName
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 1438095948390472292, guid: 992e0c09db909114c97b265ad7c6c4f3, type: 3}
       propertyPath: convoBox
