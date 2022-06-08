@@ -71,83 +71,70 @@ public class LevelStartupSequence : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(textDelay / 3);
+        yield return new WaitForSeconds(textDelay);
 
         //Player jumping info
         tutorialText.text = texts[2];
 
-        //Wait for Space
-        while (!Input.GetKeyUp(KeyCode.Space))
+        //Wait for Jump
+        while (!Input.GetButtonUp("Jump"))
         {
             yield return null;
         }
 
-        yield return new WaitForSeconds(textDelay);
+        yield return new WaitForSeconds(textDelay * 2);
 
-        //Playerjump to planet info
+        //NPC info
         tutorialText.text = texts[3];
 
-        yield return new WaitForSeconds(textDelay + 5);
+        //Wait for interact
+        while (!Input.GetButtonUp("Interact"))
+        {
+            yield return null;
+        }
+        while (!Input.GetButtonUp("Interact"))
+        {
+            yield return null;
+        }
+        while (!Input.GetButtonUp("Interact"))
+        {
+            yield return null;
+        }
 
-        //Player talk to NPC info
+        pc.vacuumEnabled = false;
+
         tutorialText.text = texts[4];
 
-        //Wait for E
-        while (!Input.GetKeyUp(KeyCode.E))
+        //Wait for sucking
+        while (!Input.GetButtonUp("Suck"))
         {
             yield return null;
         }
 
-        //Wait for A
-        while (!Input.GetKeyUp(KeyCode.A))
-        {
-            yield return null;
-        }
-
-        //Make vacuum active
-        pc.vacuumEnabled = true;
-
-        //Player boost to planet info
         tutorialText.text = texts[5];
 
-        //Wait for Right Mouse
-        while (!Input.GetMouseButtonDown(1))
+        //Wait for interact
+        while (!Input.GetButtonUp("Interact"))
+        {
+            yield return null;
+        }
+        while (!Input.GetButtonUp("Interact"))
+        {
+            yield return null;
+        }
+        while (!Input.GetButtonUp("Interact"))
         {
             yield return null;
         }
 
-        yield return new WaitForSeconds(textDelay);
-
-        //Player suck info
         tutorialText.text = texts[6];
 
-        //Wait for Left Mouse
-        while (!Input.GetMouseButtonDown(0))
-        {
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(textDelay);
+        yield return new WaitForSeconds(textDelay * 1.5f);
 
         tutorialText.text = texts[7];
-        faseNPC.SendMessage("SetDialogueFase", 1);
 
-        //Wait for E
-        while (!Input.GetKeyUp(KeyCode.E))
-        {
-            yield return null;
-        }
-
-        //Wait for A
-        while (!Input.GetKeyUp(KeyCode.A))
-        {
-            yield return null;
-        }
-
-        tutorialText.text = texts[8];
-
-        //Wait for M
-        while (!Input.GetKeyDown(KeyCode.M))
+        //Wait for map
+        while (!Input.GetButtonUp("Map"))
         {
             yield return null;
         }
