@@ -6,13 +6,20 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D body;
     public float moveSpeed, jumpPower;
+    public GameObject vacuum;
+    private VacuumController vc;
     private bool isGrounded;
     private float horizontal;
+    public List<Sprite> sprites;
+    private bool isIdle = true;
+
+    public bool vacuumEnabled = true;
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        vc = vacuum.GetComponent<VacuumController>();
     }
 
     // Update is called once per frame
@@ -21,12 +28,43 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             body.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
+            isIdle = false;
+        }
+        else
+        {
+            isIdle = true;
+        }
+
+        if (Input.GetButton("Suck") && vacuumEnabled)
+        {
+            vc.StartAction(true);
+            isIdle = false;
+        }
+        else
+        {
+            isIdle = true;
+        }
+
+        if (Input.GetButton("Blow") && vacuumEnabled)
+        {
+            vc.StartAction(false);
+            isIdle = false;
+        }
+        else
+        {
+            isIdle = true;
         }
     }
 
     private void FixedUpdate()
     {
         body.AddForce(transform.right * horizontal * moveSpeed);
+
+        if (isIdle)
+        {
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            sr.sprite = sprites[0]; //Set sprite to idle
+        }
     }
 
     private void OnTriggerStay2D(Collider2D obj)
