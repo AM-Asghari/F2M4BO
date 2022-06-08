@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (obj.CompareTag("Planet"))
         {
-            body.drag = 1.5f;
+            body.drag = 5f;
 
             float distance = Mathf.Abs(obj.GetComponent<GravityPoint>().planetRadius - Vector2.Distance(transform.position, obj.transform.position));
             if (distance < 1f)

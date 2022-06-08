@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeteorScript : MonoBehaviour
+public class MeteorSpawner: MonoBehaviour
 {
     float timer = 0.0f;
     public float delay = 100.0f;
@@ -17,17 +17,21 @@ public class MeteorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //this.transform.position = new Vector3(Mathf.Cos(sinInd) * 10, 0, 0);
-        //sinInd += Time.deltaTime * 0.5f; 
-        if(movingRight == true)
+        timer += Time.deltaTime;
+        if(timer > delay)
         {
-            transform.position += new Vector3(xAxisSpeed, zAxisSpeed);
+            GameObject obj = Instantiate(Meteor);
+            obj.transform.position = new Vector3(-6.22f, -2.34f, 0);
+            timer = 0.0f;
         }
+
+
     }
 }
 
