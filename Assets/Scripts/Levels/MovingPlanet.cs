@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class MovingPlanet : MonoBehaviour
 {
-    GameObject A;
-    GameObject B;
+    public GameObject A;
+    public GameObject B;
     //Vector3 velocity;
     float n = 0f;
     public float speed;
@@ -15,8 +15,6 @@ public class MovingPlanet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        A = GameObject.Find("A");
-        B = GameObject.Find("B");
 
     }
 
