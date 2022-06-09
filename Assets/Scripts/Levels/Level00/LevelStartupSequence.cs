@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class LevelStartupSequence : MonoBehaviour
 {
     public GameObject score;
+    public Text scoreText;
     public GameObject faseNPC;
+    private NPCController npcc;
     public GameObject player;
     private PlayerMovement pc;
     public GameObject tutorialGroup;
@@ -22,6 +24,8 @@ public class LevelStartupSequence : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>(); //Get components for sprite renderer so opacity can be changed
         pc = player.GetComponent<PlayerMovement>(); //Get the vacuum controller so variables can be changed
+        scoreText = score.GetComponent<Text>();
+        npcc = faseNPC.GetComponent<NPCController>();
 
         tutorialText = textObject.GetComponent<TMPro.TextMeshProUGUI>();
 
@@ -73,56 +77,71 @@ public class LevelStartupSequence : MonoBehaviour
 
         yield return new WaitForSeconds(textDelay);
 
-        //Player jumping info
         tutorialText.text = texts[2];
 
-        //Wait for Jump
-        while (!Input.GetButtonUp("Jump"))
+        //Wait for Space press
+        while (!Input.GetKeyUp(KeyCode.Space))
         {
             yield return null;
         }
 
-        yield return new WaitForSeconds(textDelay * 2);
+        yield return new WaitForSeconds(textDelay);
 
-        //NPC info
         tutorialText.text = texts[3];
 
         //Wait for interact
-        while (!Input.GetButtonUp("Interact"))
+        while (!Input.GetKeyUp(KeyCode.E))
         {
             yield return null;
         }
-        while (!Input.GetButtonUp("Interact"))
+        while (!Input.GetKeyUp(KeyCode.E))
         {
             yield return null;
         }
-        while (!Input.GetButtonUp("Interact"))
+        while (!Input.GetKeyUp(KeyCode.E))
         {
             yield return null;
         }
 
-        pc.vacuumEnabled = false;
+        //Transition to black screen again
+        for (float i = 0.01f; i < 1f; i = i + 0.01f)
+        {
+            sr.color = new Color(0, 0, 0, i);
+            yield return new WaitForSeconds(0.025f);
+        }
+
+        //Enable vacuum
+        pc.vacuumEnabled = true;
+
+        //Black screen transition
+        for (float i = 1f; i > 0.01f; i = i - 0.01f)
+        {
+            sr.color = new Color(0, 0, 0, i);
+            yield return new WaitForSeconds(0.025f);
+        }
 
         tutorialText.text = texts[4];
 
-        //Wait for sucking
-        while (!Input.GetButtonUp("Suck"))
+        //Wait for star pickup
+        while (!scoreText.text.Equals("1"))
         {
             yield return null;
         }
+
+        npcc.SetDialogueFase(1);
 
         tutorialText.text = texts[5];
 
-        //Wait for interact
-        while (!Input.GetButtonUp("Interact"))
+        //Wait for E press
+        while (!Input.GetKeyUp(KeyCode.E))
         {
             yield return null;
         }
-        while (!Input.GetButtonUp("Interact"))
-        {
-            yield return null;
-        }
-        while (!Input.GetButtonUp("Interact"))
+
+        scoreText.text = "0";
+
+        //Wait for star dropoff
+        while (!scoreText.text.Equals("0"))
         {
             yield return null;
         }
@@ -133,8 +152,8 @@ public class LevelStartupSequence : MonoBehaviour
 
         tutorialText.text = texts[7];
 
-        //Wait for map
-        while (!Input.GetButtonUp("Map"))
+        //Wait for M press
+        while (!Input.GetKeyUp(KeyCode.E))
         {
             yield return null;
         }
