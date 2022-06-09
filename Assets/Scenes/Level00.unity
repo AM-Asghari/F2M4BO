@@ -939,6 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 4607401742685144607}
+  scoreText: {fileID: 0}
   faseNPC: {fileID: 183478240}
   player: {fileID: 1477943979}
   tutorialGroup: {fileID: 1639668529}
@@ -946,15 +947,13 @@ MonoBehaviour:
   texts:
   - Hey, you! You're finally awake!
   - Use A & D to walk...
-  - Use A & D to walk... ...and Space to jump!
-  - You can jump to other planets too. Try it out!
-  - There is an NPC on that planet. Try talking to them by pressing E when near.
-  - Wow, what a cool new gadget! You can use Right Mouse Click to blow and boost
-    yourself away to further planets!
-  - Try sucking up that star using your new vacuum, by holding the left mouse button.
-  - Now you can bring the star over to the old Geblo.. geblogg... geblorger!
-  - Use M to open your new map and go deliver your first star!
-  textDelay: 0.1
+  - You can jump to other planets by jumping with Space.
+  - Try talking to the NPC in the top right. Press E to interact with them.
+  - What a cool gadget! You can use it to suck up that star on the left
+  - Bring the star over to the old alien.
+  - Time to help more people throughout the cosmos!
+  - Press M to open your new map.
+  textDelay: 0.5
 --- !u!212 &2138344059
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1444,6 +1443,10 @@ PrefabInstance:
       propertyPath: exceptions.Array.data[1]
       value: 
       objectReference: {fileID: 1590992070}
+    - target: {fileID: 1623441569493556918, guid: bc01fefd5c4987049904c2be19ac834f, type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4375987224393853373, guid: bc01fefd5c4987049904c2be19ac834f, type: 3}
       propertyPath: m_Constraints
       value: 4
