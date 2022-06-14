@@ -39,5 +39,4 @@ public class GravityPoint : MonoBehaviour
             obj.transform.up = Vector3.MoveTowards(obj.transform.up, -dir, gravityScale * Time.deltaTime);
         }
     }
-
 }

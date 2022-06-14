@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb0f481adaa8ea4ca749b1d6bcd034c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 1
+  delay: 2
   Meteor: {fileID: 0}
 --- !u!1001 &1940261704
 PrefabInstance:

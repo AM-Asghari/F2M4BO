@@ -8,10 +8,6 @@ public class MeteorSpawner: MonoBehaviour
     public float delay = 100.0f;
     public GameObject Meteor;
 
-
-    float xAxisSpeed = 0.01f;
-    float zAxisSpeed = -0.007f;
-    bool movingRight = true;
     //float sinInd = 0;
 
     // Start is called before the first frame update
