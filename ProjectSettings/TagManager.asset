@@ -8,6 +8,10 @@ TagManager:
   - onPlanet
   - Star
   - Map
+  - dialogue_cv
+  - dialogue_txt
+  - dialogue_name
+  - dialogue_bg
   layers:
   - Default
   - TransparentFX
