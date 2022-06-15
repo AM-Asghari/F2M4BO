@@ -33,7 +33,7 @@ public class DialogueClicker : MonoBehaviour
 
     IEnumerator Conversation()
     {
-        txt.bg.gameObject.SetActive(true);
+        //txt.bg.gameObject.SetActive(true);
 
         for (int i = 0; i < dialogue.Length; i++) //For every dialogue entry:
         {
@@ -51,7 +51,7 @@ public class DialogueClicker : MonoBehaviour
 
         canTalk = true;
 
-        txt.bg.gameObject.SetActive(false);
+        //txt.bg.gameObject.SetActive(false);
 
         yield break;
     }

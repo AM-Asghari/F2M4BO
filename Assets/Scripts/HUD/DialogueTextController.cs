@@ -27,7 +27,7 @@ public class DialogueTextController : MonoBehaviour
         txt.text = "";
         nametxt.text = "";
 
-        bg.SetActive(false);
+        //bg.SetActive(false);
     }
 
     // Update is called once per frame
