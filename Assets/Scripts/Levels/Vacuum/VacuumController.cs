@@ -10,7 +10,7 @@ public class VacuumController : MonoBehaviour
     public List<GameObject> exceptions = new List<GameObject>();
 
     private Rigidbody2D rb;
-    private Collider2D coll;
+    private PolygonCollider2D coll;
     public List<Collider2D> colls = new List<Collider2D>();
 
     private LookAtMouse hiddenObjScr;
@@ -21,7 +21,7 @@ public class VacuumController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coll = GetComponent<Collider2D>();
+        coll = GetComponent<PolygonCollider2D>();
         hiddenObjScr = hiddenObj.GetComponent<LookAtMouse>();
         playerScript = player.GetComponent<PlayerMovement>();
     }
