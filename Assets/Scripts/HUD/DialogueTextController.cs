@@ -13,6 +13,8 @@ public class DialogueTextController : MonoBehaviour
     public GameObject nameObject;
     public TextMeshProUGUI nametxt;
 
+    public bool dialogue_active = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,14 +28,23 @@ public class DialogueTextController : MonoBehaviour
         //Empty text
         txt.text = "";
         nametxt.text = "";
-
-        //bg.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        foreach (Transform child in transform)
+        {
+            if (dialogue_active == false)
+            {
+                child.gameObject.SetActive(false);
+            }
+            else if(dialogue_active == true)
+            {
+                child.gameObject.SetActive(true);
+            }
+        }
     }
 
     public void SetText(string text, string name)
@@ -46,6 +57,7 @@ public class DialogueTextController : MonoBehaviour
 
     IEnumerator DisplayText(string[] text, string name, float delay)
     {
+
         txt.text = "";
         nametxt.text = name;
 
@@ -58,6 +70,10 @@ public class DialogueTextController : MonoBehaviour
             }
             txt.text += " "; //Add a space after a word is finished
         }
+
+
         yield break;
     }
+
+    
 }

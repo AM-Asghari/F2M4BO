@@ -6,7 +6,7 @@ using TMPro;
 public class DialogueClicker : MonoBehaviour
 {
     public GameObject dialogueCanvas;
-    private DialogueTextController txt;
+    private DialogueTextController dialogueController;
 
     public string dialogueName;
     public string[] dialogue;
@@ -17,7 +17,7 @@ public class DialogueClicker : MonoBehaviour
     void Start()
     {
         dialogueCanvas = GameObject.FindGameObjectWithTag("dialogue_cv");
-        txt = dialogueCanvas.GetComponent<DialogueTextController>();
+        dialogueController = dialogueCanvas.GetComponent<DialogueTextController>();
     }
 
     // Update is called once per frame
@@ -33,12 +33,12 @@ public class DialogueClicker : MonoBehaviour
 
     IEnumerator Conversation()
     {
-        //txt.bg.gameObject.SetActive(true);
+        dialogueController.dialogue_active = true;
 
         for (int i = 0; i < dialogue.Length; i++) //For every dialogue entry:
         {
             //Set dialogue text to entry;
-            txt.SetText(dialogue[i], dialogueName);
+            dialogueController.SetText(dialogue[i], dialogueName);
 
             yield return new WaitForSeconds(dialogue[i].Length * 0.025f);
 
@@ -51,7 +51,7 @@ public class DialogueClicker : MonoBehaviour
 
         canTalk = true;
 
-        //txt.bg.gameObject.SetActive(false);
+        dialogueController.dialogue_active = false;
 
         yield break;
     }

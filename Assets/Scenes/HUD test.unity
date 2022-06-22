@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 447a47f6a5371844ebba42e604084dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCanvas: {fileID: 0}
+  dialogueCanvas: {fileID: 599298021}
   dialogueName: Tutorial
   dialogue:
   - Hello! What's up!
@@ -174,6 +174,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &599298021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7725846768033702407, guid: 8c5ab30986d25f549aab47b3fbaa883e, type: 3}
+  m_PrefabInstance: {fileID: 7725846768487761661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1400751241
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +337,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7725846767955932389, guid: 8c5ab30986d25f549aab47b3fbaa883e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7725846768380157389, guid: 8c5ab30986d25f549aab47b3fbaa883e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
