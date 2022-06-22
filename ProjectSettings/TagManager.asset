@@ -12,6 +12,7 @@ TagManager:
   - dialogue_txt
   - dialogue_name
   - dialogue_bg
+  - Surface
   layers:
   - Default
   - TransparentFX

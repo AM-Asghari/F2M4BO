@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3718683186410934484
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3019180399682386584, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180399682386584, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180399682386585, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3d904b5f9f6b4a4396ecf4299f1cc92, type: 3}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0001886487
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339754, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019180400663339758, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: m_Name
+      value: Planet06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173859938726665648, guid: 515a63039f3ca2748a976704b7044252, type: 3}
+      propertyPath: planetRadius
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 515a63039f3ca2748a976704b7044252, type: 3}
