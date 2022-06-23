@@ -23,7 +23,7 @@ public class MeteorSpawner: MonoBehaviour
         if(timer > delay)
         {
             GameObject obj = Instantiate(Meteor);
-            obj.transform.position = new Vector3(-8.52f, 1.06f, 0);
+            obj.transform.position = new Vector3(-83.3f, 6.8f, 0);
             timer = 0.0f;
         }
 

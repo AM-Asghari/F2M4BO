@@ -9,8 +9,8 @@ public class MeteorScript : MonoBehaviour
     public GameObject Meteor;
 
 
-    float xAxisSpeed = 0.01f;
-    float zAxisSpeed = -0.007f;
+    float xAxisSpeed = 0.1f;
+    float zAxisSpeed = -0.05f;
     bool movingRight = true;
     //float sinInd = 0;
 
