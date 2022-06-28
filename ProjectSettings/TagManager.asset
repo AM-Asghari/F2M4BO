@@ -13,6 +13,8 @@ TagManager:
   - dialogue_name
   - dialogue_bg
   - Surface
+  - hud
+  - player_part
   layers:
   - Default
   - TransparentFX

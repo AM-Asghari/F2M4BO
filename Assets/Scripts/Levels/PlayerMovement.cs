@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     public List<Sprite> sprites;
     private bool isIdle = true;
+    public float distance;
 
     public bool vacuumEnabled = true;
 
@@ -28,9 +29,9 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             body.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
-            isIdle = false;
+            //isIdle = false;
         }
-        else
+        /*else
         {
             isIdle = true;
         }
@@ -53,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             isIdle = true;
-        }
+        }*/
     }
 
     private void FixedUpdate()
@@ -75,7 +76,8 @@ public class PlayerMovement : MonoBehaviour
         {
             body.drag = 5f;
 
-            float distance = Mathf.Abs(obj.GetComponent<GravityPoint>().planetRadius - Vector2.Distance(transform.position, obj.transform.position));
+            distance = Mathf.Abs(obj.GetComponent<PlanetController>().planetRadius - Vector2.Distance(transform.position, obj.gameObject.transform.position));
+
             if (distance < 1f)
             {
                 isGrounded = distance < 0.1f;
