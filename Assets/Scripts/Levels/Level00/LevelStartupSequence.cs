@@ -128,7 +128,7 @@ public class LevelStartupSequence : MonoBehaviour
             yield return null;
         }
 
-        npcc.SetDialogueFase(1);
+        //npcc.SetDialogueFase(1);
 
         tutorialText.text = texts[5];
 

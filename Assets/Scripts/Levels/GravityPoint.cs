@@ -21,22 +21,25 @@ public class GravityPoint : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D obj)
     {
-
-        if (obj.CompareTag("Player"))
+        if (!obj.CompareTag("player_part"))
         {
-            float gravitationalPower = gravityScale;
-            float dist = Vector2.Distance(obj.transform.position, transform.position);
-
-            if (dist > (planetRadius + gravityMinRange))
+            if (obj.CompareTag("Player"))
             {
-                float min = planetRadius + gravityMinRange;
-                gravitationalPower = (((min + gravityMinRange) - dist) / gravityMaxRange) * gravitationalPower;
+                float gravitationalPower = gravityScale;
+                float dist = Vector2.Distance(obj.transform.position, transform.position);
+
+                if (dist > (planetRadius + gravityMinRange))
+                {
+                    float min = planetRadius + gravityMinRange;
+                    gravitationalPower = (((min + gravityMinRange) - dist) / gravityMaxRange) * gravitationalPower;
+                }
+
+                Vector3 dir = (transform.position - obj.transform.position) * gravitationalPower;
+                obj.GetComponent<Rigidbody2D>().AddForce(dir);
+
+                obj.transform.up = Vector3.MoveTowards(obj.transform.up, -dir, gravityScale * Time.deltaTime);
             }
-
-            Vector3 dir = (transform.position - obj.transform.position) * gravitationalPower;
-            obj.GetComponent<Rigidbody2D>().AddForce(dir);
-
-            obj.transform.up = Vector3.MoveTowards(obj.transform.up, -dir, gravityScale * Time.deltaTime);
         }
+            
     }
 }
