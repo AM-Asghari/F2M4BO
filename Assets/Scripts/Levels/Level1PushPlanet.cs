@@ -11,8 +11,8 @@ public class Level1PushPlanet : MonoBehaviour
     //Vector3 velocity;
     float n = 0f;
     public float speed;
-    float xAxisSpeed = -0.009f;
-    float zAxisSpeed = 0.007f;
+    float xAxisSpeed = -0.09f;
+    float zAxisSpeed = 0.07f;
 
     // Start is called before the first frame update
     void Start()
